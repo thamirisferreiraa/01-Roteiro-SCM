@@ -201,14 +201,16 @@ Isso configura o gerenciador de credenciais do Windows para armazenar suas crede
 ### Passo 2.1 — Aluno A: Criar o Fork
 
 1. Acesse o repositório template fornecido pelo professor:  
-   `https://github.com/[professor]/landing-page-template`
+   `https://github.com/EngSoftwareFatecRL/01-Roteiro-SCM`
 
 2. Clique no botão **"Fork"** (canto superior direito).
 
 3. Na tela de criação do fork:
-   - Mantenha o nome do repositório ou personalize (ex: `landing-page-dupla-joao-maria`).
+   - Mantenha o nome do repositório ou personalize (ex: `01_Roteiro-SCM_joao-maria`).
    - Marque a opção **"Copy the main branch only"**.
    - Clique em **"Create fork"**.
+
+> 📸 **Evidência 1 — Aluno A:** Após criar o fork, tire um print da página inicial do repositório forkado no GitHub, exibindo o nome do repositório e o aviso *"forked from EngSoftwareFatecRL/01-Roteiro-SCM"*.
 
 ```mermaid
 sequenceDiagram
@@ -230,13 +232,16 @@ sequenceDiagram
 
 > O Aluno B receberá um e-mail de convite e também verá uma notificação no GitHub.
 
+> 📸 **Evidência 2 — Aluno A:** Tire um print da página **Settings → Collaborators** mostrando o Aluno B listado como colaborador.
+
 ### Passo 2.3 — Aluno B: Aceitar o Convite
 
 1. Acesse [github.com/notifications](https://github.com/notifications) ou verifique seu e-mail.
 2. Aceite o convite de colaboração.
 
-**✅ Checkpoint:** Ambos os alunos devem conseguir acessar o repositório em:  
-`https://github.com/[AlunoA]/landing-page-dupla-[nomes]`
+**✅ Checkpoint — Evidência 3 (ambos):** Ambos os alunos devem conseguir acessar o repositório em:  
+`https://github.com/[AlunoA]/01_Roteiro-SCM_[nomes]`  
+📸 Cada integrante tira um print do repositório aberto no browser logado com a sua própria conta.
 
 ### Passo 2.4 — Ambos: Clonar o Repositório
 
@@ -248,20 +253,20 @@ Cada aluno deve clonar **o repositório do Aluno A** (não o do professor).
 
 ```bash
 cd C:\Users\SeuUsuario\Documents
-git clone https://github.com/[AlunoA]/landing-page-dupla-[nomes].git
+git clone https://github.com/[AlunoA]/01_Roteiro-SCM_[nomes].git
 ```
 
 3. Abra a pasta clonada no VS Code:
 
 ```bash
-cd landing-page-dupla-[nomes]
+cd 01_Roteiro-SCM_[nomes]
 code .
 ```
 
 **✅ Checkpoint:** Verifique a estrutura do projeto:
 
 ```
-landing-page-dupla-[nomes]/
+01_Roteiro-SCM_[nomes]/
 ├── index.html
 ├── css/
 │   └── style.css
@@ -273,6 +278,8 @@ landing-page-dupla-[nomes]/
 ```
 
 > Se a pasta estiver vazia ou o comando falhar, verifique se a URL está correta e se você tem acesso ao repositório.
+
+> 📸 **Evidência 4 (ambos):** Tire um print do terminal mostrando a saída do `git clone` e a listagem dos arquivos clonados com `dir` (ou `ls`).
 
 ---
 
@@ -365,13 +372,14 @@ git push origin main
 ```
 Enumerating objects: 5, done.
 ...
-To https://github.com/[AlunoA]/landing-page-dupla-[nomes].git
+To https://github.com/[AlunoA]/01_Roteiro-SCM_[nomes].git
    def4567..abc1234  main -> main
 ```
 
-**✅ Checkpoint:** Acesse o repositório no GitHub pelo navegador e verifique:
+**✅ Checkpoint — Evidência 5 (Aluno A):** Acesse o repositório no GitHub pelo navegador e verifique:
 - O commit aparece no histórico?
-- O arquivo `index.html` reflete a alteração?
+- O arquivo `index.html` reflete a alteração?  
+📸 Tire um print da página de commits do repositório no GitHub, mostrando o commit recém-criado com o seu nome de usuário.
 
 ### Passo 3.6 — Aluno B: Receber as alterações (Pull)
 
@@ -394,7 +402,8 @@ Fast-forward
  1 file changed, 1 insertion(+), 1 deletion(-)
 ```
 
-**✅ Checkpoint:** O Aluno B deve abrir o `index.html` e confirmar que o título agora é `DevLab - Soluções Digitais`.
+**✅ Checkpoint — Evidência 6 (Aluno B):** O Aluno B deve abrir o `index.html` e confirmar que o título agora é `DevLab - Soluções Digitais`.  
+📸 Tire um print do terminal mostrando a saída bem-sucedida do `git pull` e o arquivo `index.html` aberto no VS Code com o título atualizado.
 
 ---
 
@@ -428,7 +437,8 @@ git push origin main
 git pull origin main
 ```
 
-**✅ Checkpoint:** Ambos devem ter as mesmas alterações nos arquivos `index.html` e `css/style.css`.
+**✅ Checkpoint — Evidência 7 (Aluno B):** Ambos devem ter as mesmas alterações nos arquivos `index.html` e `css/style.css`.  
+📸 Aluno B: tire um print do terminal com a saída do `git push` bem-sucedido e a página de commits no GitHub mostrando o commit do Aluno B.
 
 ---
 
@@ -483,7 +493,7 @@ git push origin main
 **⚠️ Resultado esperado — ERRO:**
 
 ```
-To https://github.com/[AlunoA]/landing-page-dupla-[nomes].git
+To https://github.com/[AlunoA]/01_Roteiro-SCM_[nomes].git
  ! [rejected]        main -> main (fetch first)
 error: failed to push some refs to '...'
 hint: Updates were rejected because the remote contains work that you do not
@@ -514,9 +524,11 @@ Agora complete o push:
 git push origin main
 ```
 
-**✅ Checkpoint:** Ambos fazem `git pull` e verificam que **ambas** as alterações estão presentes:
+**✅ Checkpoint — Evidência 8 (ambos):** Ambos fazem `git pull` e verificam que **ambas** as alterações estão presentes:
 - `index.html` com o parágrafo de descrição
 - `js/script.js` com a mensagem de console
+
+📸 Tire um print da página de commits no GitHub mostrando os dois commits (um de cada aluno) e o commit de merge automático.
 
 #### Aluno A — Sincronizar
 
@@ -680,11 +692,15 @@ git push origin main
 git pull origin main
 ```
 
-**✅ Checkpoint Final da Parte 5:**
+**✅ Checkpoint Final da Parte 5 — Evidência 9 (ambos):**
 - [ ] O arquivo `css/style.css` **não contém** marcadores de conflito.
 - [ ] Ambos os alunos possuem a **mesma versão** do arquivo.
 - [ ] O histórico de commits no GitHub mostra o commit de merge.
 - [ ] Abra o `index.html` no navegador e verifique se o estilo está aplicado corretamente.
+
+📸 **Evidência 9a (Aluno B):** Print da tela do VS Code mostrando o arquivo `css/style.css` **após a resolução**, sem marcadores de conflito.  
+📸 **Evidência 9b (ambos):** Print do histórico completo de commits no GitHub (`Insights → Network` ou a aba *Commits*), mostrando os commits de ambos os integrantes e o commit de resolução do conflito.  
+📸 **Evidência 9c (ambos):** Print do `index.html` aberto no navegador com o estilo final aplicado.
 
 ---
 
@@ -697,7 +713,7 @@ git pull origin main
 **Solução:**
 
 ```bash
-cd C:\Users\SeuUsuario\Documents\landing-page-dupla-[nomes]
+cd C:\Users\SeuUsuario\Documents\01_Roteiro-SCM_[nomes]
 ```
 
 ---
@@ -799,10 +815,42 @@ Isso desfaz o commit mas **mantém suas alterações** na staging area.
 
 ## 12. Evidências a serem entregues
 
-Cada integrante deve gerar um documento (**.docx** ou **.pdf**) contendo:  
+Cada integrante deve entregar individualmente um documento (**.docx** ou **.pdf**) contendo as evidências abaixo. As capturas de tela devem ser **legíveis**, mostrar **data/hora do sistema** (deixe a barra de tarefas visível) e o **nome de usuário GitHub** conectado (exibido no canto superior direito do GitHub).
 
-✅ **1. O endereço (URL) do repositório criado.**  
-✅ **2. Captura de tela dos commits feitos por você e pelo seu colaborador.**
+---
+
+### 📋 Lista de evidências obrigatórias
+
+| # | Quem coleta | O que capturar |
+|---|---|---|
+| **1** | Aluno A | Página inicial do repositório forkado no GitHub, exibindo o aviso *"forked from EngSoftwareFatecRL/01-Roteiro-SCM"* |
+| **2** | Aluno A | Página **Settings → Collaborators** com o Aluno B listado como colaborador |
+| **3** | Ambos | Repositório aberto no browser logado com a conta própria de cada integrante |
+| **4** | Ambos | Terminal com a saída do `git clone` seguida de `dir` (ou `ls`) listando os arquivos clonados |
+| **5** | Aluno A | Página de commits do repositório no GitHub com o commit do Passo 3.4 visível e o nome do autor |
+| **6** | Aluno B | Terminal com a saída do `git pull` (Passo 3.6) e o `index.html` aberto no VS Code com o título `DevLab - Soluções Digitais` |
+| **7** | Aluno B | Terminal com a saída do `git push` bem-sucedido após o ciclo de inversão de papéis |
+| **8** | Ambos | Página de commits no GitHub mostrando commits de ambos os integrantes e o commit de merge automático (Parte 4) |
+| **9a** | Aluno B | VS Code exibindo `css/style.css` **após a resolução do conflito**, sem marcadores `<<<<<<<` |
+| **9b** | Ambos | Histórico de commits no GitHub (aba *Commits* ou *Insights → Network*) com o commit de resolução do conflito de ambos os integrantes |
+| **9c** | Ambos | `index.html` aberto no navegador com o estilo final aplicado corretamente |
+
+---
+
+### 📝 Sobre o documento de entrega
+
+- **Formato:** `.docx` ou `.pdf`
+- **Nome do arquivo:** `SCM_[NomeCompleto]_RA[seu-RA].pdf` (ex: `SCM_JoaoSilva_RA2024001.pdf`)
+- **Conteúdo obrigatório:**
+  - Cabeçalho com: nome completo, RA, nome do parceiro e URL do repositório
+  - As 9 evidências listadas acima, **numeradas e identificadas**, com legenda indicando o que está sendo mostrado
+  - Breve resposta (2–4 linhas) para cada uma das perguntas reflexivas abaixo:
+
+### 💬 Perguntas reflexivas (responder no documento)
+
+1. Qual é a diferença entre `git add` e `git commit`? Por que essas duas etapas existem separadas?
+2. O que acontece no repositório local quando você executa `git pull`? O que pode dar errado?
+3. Em qual situação o Git **não consegue** fazer o merge automaticamente? Como você resolveu o conflito nesta atividade?
 
 ---
 
